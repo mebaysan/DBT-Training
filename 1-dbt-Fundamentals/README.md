@@ -57,7 +57,7 @@ introduction_to_dbt:
       user: root
       pass: root
       dbname: WarehouseDB
-      schema: public
+      schema: transformed
 
     prod:
       type: postgres

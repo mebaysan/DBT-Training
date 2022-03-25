@@ -8,6 +8,7 @@ engine = create_engine("postgresql://root:root@warehouse:5432/WarehouseDB")
 with engine.connect() as con:
     con.execute("create schema if not exists jaffle_shop")
     con.execute("create schema if not exists stripe")
+    con.execute("create schema if not exists transformed") # dbt will use this schema to load transformed data
     print("SCHEMAS ARE CREATED!")
 
 # read datasets
