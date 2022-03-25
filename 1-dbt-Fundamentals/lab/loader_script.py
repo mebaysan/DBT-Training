@@ -4,10 +4,11 @@ from sqlalchemy import create_engine
 # creating a connection to our data warehouse which is we created in docker-compose.yml
 engine = create_engine("postgresql://root:root@warehouse:5432/WarehouseDB")
 
-# with engine.connect() as con:
-#     con.execute("create schema if not exists jaffle_shop")
-#     con.execute("create schema if not exists stripe")
-#     print("SCHEMAS ARE CREATED!")
+# creating schemas
+with engine.connect() as con:
+    con.execute("create schema if not exists jaffle_shop")
+    con.execute("create schema if not exists stripe")
+    print("SCHEMAS ARE CREATED!")
 
 # read datasets
 dataset1 = pd.read_csv(
@@ -23,9 +24,18 @@ dataset3 = pd.read_csv(
 
 # load data to our warehouse
 try:
-    dataset1.to_sql(name="jaffle_shop_orders", con=engine, if_exists="replace")
-    dataset2.to_sql(name="jaffle_shop_customers", con=engine, if_exists="replace")
-    dataset3.to_sql(name="stripe_payments", con=engine, if_exists="replace")
+    dataset1.to_sql(
+        name="orders", con=engine, schema="jaffle_shop", if_exists="replace"
+    )
+    dataset2.to_sql(
+        name="customers",
+        con=engine,
+        schema="jaffle_shop",
+        if_exists="replace",
+    )
+    dataset3.to_sql(
+        name="payments", con=engine, schema="stripe", if_exists="replace"
+    )
     print("LOADING SUCCEED!")
 except:
     print("LOADING ERROR!!!")
