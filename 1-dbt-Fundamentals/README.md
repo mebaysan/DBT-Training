@@ -35,3 +35,10 @@ mkdir /tmp/dbt_course1_volume
 - http://dbt-tutorial-public.s3-us-west-2.amazonaws.com/jaffle_shop_orders.csv
 - http://dbt-tutorial-public.s3-us-west-2.amazonaws.com/jaffle_shop_customers.csv
 - http://dbt-tutorial-public.s3-us-west-2.amazonaws.com/stripe_payments.csv
+
+
+# Folder Structure
+
+`lab` folder is not a part of our core dbt project. We use `lab` folder to run our experimental lab to simulate extract & load into our `WarehouseDB` warehouse.
+
+In root folder which is `1-dbt-Fundamentals`, there are core dbt modules & files. The `requirements.txt` file is for the core dbt project.

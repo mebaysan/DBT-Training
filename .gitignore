@@ -131,3 +131,4 @@ dmypy.json
 
 # Custome
 venv/
+.vscode/
