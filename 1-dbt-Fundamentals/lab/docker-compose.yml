@@ -1,0 +1,31 @@
+version: "3.9"
+
+services:
+
+  superset:
+    build: .
+    depends_on:
+      - warehouse
+    container_name: dbt_loader
+
+  warehouse:
+    image: postgres
+    ports:
+      - "5432:5432"
+    environment:
+      - DATABASE_HOST=127.0.0.1
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=root
+      - POSTGRES_DB=WarehouseDB
+    restart: unless-stopped
+    volumes:
+      - warehouse_volume:/var/lib/postgresql/data
+    container_name: dbt_warehouse
+
+volumes:
+  warehouse_volume:
+    driver: local
+    driver_opts:
+      type: 'none'
+      o: 'bind'
+      device: '/tmp/dbt_course1_volume/'
