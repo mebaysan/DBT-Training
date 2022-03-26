@@ -17,19 +17,6 @@ You should execute the script below on a terminal
 docker-compose up -d
 ```
 
-If you get error something like the below
-```bash
-docker-compose up -d
-
->>> The folder '/tmp/dbt_course1_volume' couldn't find...
-```
-
-You should create a folder to store your volumes
-```bash
-mkdir /tmp/dbt_course1_volume
-```
-
-
 # Datasets
 
 - http://dbt-tutorial-public.s3-us-west-2.amazonaws.com/jaffle_shop_orders.csv
