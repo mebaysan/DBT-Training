@@ -26,9 +26,9 @@ models:
                 - returned
                 - placed
                 - return_pending
-      - name: CUSTOMER_ID
-        quote: True
-        tests:
-          - relationships:
-              to: ref('customers') # we write table name in here
-              field: CUSTOMER_ID
+      # - name: CUSTOMER_ID
+      #   quote: True
+      #   tests:
+      #     - relationships:
+      #         to: ref('stg_customers')
+      #         field: CUSTOMER_ID
