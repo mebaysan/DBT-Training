@@ -4,20 +4,25 @@ version: 2
 
 sources:
   - name: jaffle_shop # source name
+    description: Jaffle Shop data in the Postgres warehouse we created in lab by Docker
     database: WarehouseDB
     schema: jaffle_shop # which schema
     tables:
       - name: customers
+        description: Raw customers data
         columns:
           - name: ID
+            description: Primary key for customers data
             quote: True # because we work with PostgreSQL
             tests:
               - unique
               - not_null
       
       - name: orders
+        description: Raw orders data
         columns:
           - name: ID
+            description: Primary key for orders data
             quote: True
             tests:
               - unique              

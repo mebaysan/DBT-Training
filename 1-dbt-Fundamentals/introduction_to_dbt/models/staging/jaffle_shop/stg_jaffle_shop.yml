@@ -2,8 +2,10 @@ version: 2
 
 models:
   - name: stg_customers
+    description: One unique customer per row
     columns: 
       - name: CUSTOMER_ID
+        description: Primary key for stg_customers
         quote: True # because we work with PostgreSQL
         tests:
           - unique
@@ -17,6 +19,7 @@ models:
           - unique
           - not_null
       - name: STATUS
+        description: '{{ doc("order_status") }}'
         quote: True
         tests:
           - accepted_values:
