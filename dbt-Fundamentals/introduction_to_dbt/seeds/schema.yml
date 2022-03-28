@@ -1,0 +1,12 @@
+# we creates seeds manually. Then we can load them into tables by using `dbt seeds`
+# also, we can test them
+version: 2
+
+seeds:
+  - name: employees
+    description: a manual map of employees to customers
+    columns:
+      - name: employee_id
+        tests:
+          - unique
+          - not_null
