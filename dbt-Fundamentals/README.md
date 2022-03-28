@@ -28,7 +28,7 @@ docker-compose up -d
 
 `lab` folder is not a part of our core dbt project. We use `lab` folder to run our experimental lab to simulate extract & load into our `WarehouseDB` warehouse.
 
-In root folder which is `1-dbt-Fundamentals`, there are core dbt modules & files. The `requirements.txt` file is for the core dbt project. The `introduction_to_dbt` folder is created with `dbt init` . So, it is the main project folder :)
+In root folder which is `dbt-Fundamentals`, there are core dbt modules & files. The `requirements.txt` file is for the core dbt project. The `introduction_to_dbt` folder is created with `dbt init` . So, it is the main project folder :)
 
 # DBT Settings
  For this project, I put the YAML below to `~/.dbt/profiles.yml` file. You can get more information about the `profiles.yml` file from the [official docs](https://docs.getdbt.com/dbt-cli/configure-your-profile).
