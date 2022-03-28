@@ -1,10 +1,9 @@
 # DBT-Training
-I created this repo to follow official training paths of DBT
+I created this repo to follow [official training paths of DBT](https://courses.getdbt.com/collections) 
 
 
-# Courses
+[`dbt-Fundamentals`](./dbt-Fundamentals/) folder is created for following the courses
 
-1.  [dbt Fundamentals](https://courses.getdbt.com/courses/fundamentals) & [Analyses and Seeds](https://courses.getdbt.com/courses/analyses-seeds)
-    - [`dbt-Fundamentals`](./dbt-Fundamentals/) folder is created for following this course
-    - I used [dbt CLI](https://docs.getdbt.com/dbt-cli/install/overview) instead of dbt Cloud
-    - Also, that folder has a lab which is created by Docker to simulate the warehouse
+I used [dbt CLI](https://docs.getdbt.com/dbt-cli/install/overview) instead of dbt Cloud
+
+Also, that folder has a [lab](./dbt-Fundamentals/lab/) which is created by Docker to simulate the warehouse
