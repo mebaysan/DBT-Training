@@ -1,0 +1,34 @@
+version: 2
+
+models:
+  - name: stg_customers
+    columns: 
+      - name: CUSTOMER_ID
+        quote: True # because we work with PostgreSQL
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_orders
+    columns: 
+      - name: ORDER_ID
+        quote: True
+        tests:
+          - unique
+          - not_null
+      - name: STATUS
+        quote: True
+        tests:
+          - accepted_values:
+              values:
+                - completed
+                - shipped
+                - returned
+                - placed
+                - return_pending
+      - name: CUSTOMER_ID
+        quote: True
+        tests:
+          - relationships:
+              to: ref('customers') # we write table name in here
+              field: CUSTOMER_ID

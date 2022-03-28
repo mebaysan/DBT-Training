@@ -1,0 +1,10 @@
+version: 2
+
+# we can use these sources in our transformation models
+
+sources:
+  - name: stripe # source name
+    database: WarehouseDB
+    schema: stripe # which schema
+    tables:
+      - name: payments

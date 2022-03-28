@@ -6,7 +6,7 @@ with orders as (
         "ORDER_DATE",
         "STATUS"
 
-    from jaffle_shop.orders -- this schema comes from the db that dbt connected by using the profiles.yml file
+    from {{ source('jaffle_shop','orders') }}
 )
 
 select * from orders

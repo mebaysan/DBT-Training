@@ -5,7 +5,7 @@ with customers as (
         "FIRST_NAME",
         "LAST_NAME"
 
-    from jaffle_shop.customers -- this schema comes from the db that dbt connected by using the profiles.yml file
+    from {{ source('jaffle_shop', 'customers') }} -- this comes from `src_jaffle_shop.yml` file
 )
 
 select * from customers

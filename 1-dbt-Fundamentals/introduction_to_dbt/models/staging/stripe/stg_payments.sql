@@ -5,4 +5,4 @@ select
     "STATUS",
     "AMOUNT" / 100 as "AMOUNT",
     "CREATED" as "CREATED_AT"
-from stripe."payments"
+from {{ source('stripe','payments') }}
